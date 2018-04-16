@@ -198,12 +198,14 @@ class LetterOfCredit extends Component {
           <div class="actions">
             <button disabled={this.state.disableButtons} onClick={() => {this.approveLOC(this.props.letter.letterId, this.state.user)}}>I accept the application</button>
             <button disabled={this.state.disableButtons} onClick={() => {this.rejectLOC(this.props.letter.letterId)}}>I reject the application</button>
+            { this.state.disableButtons && <span class="statusMessage"> Please wait... </span> }
           </div>
           );
-      } else if (this.props.letter.status === 'RECEIVED') {
+      } else if (this.props.letter.status === 'RECEIVED' && this.props.user === 'ella') {
         buttonJSX = (
           <div class="actions">
             <button disabled={this.state.disableButtons} onClick={() => this.closeLOC(this.props.letter.letterId)}>Close this Letter of Credit</button>
+            { this.state.disableButtons && <span class="statusMessage"> Please wait... </span> }
           </div>
         )
       } else {
@@ -213,6 +215,7 @@ class LetterOfCredit extends Component {
       buttonJSX = (
         <div class="actions">
           <button disabled={this.state.disableButtons} onClick={() => this.createLOC(this.props.productDetails.type, this.props.productDetails.quantity, this.props.productDetails.pricePerUnit, this.props.rules)}>Start approval process</button>
+          { this.state.disableButtons && <span class="statusMessage"> Please wait... </span> }
         </div>
       );
     }
@@ -236,7 +239,6 @@ class LetterOfCredit extends Component {
           <DetailsCard type="Rules" data={rules} canEdit={this.props.isApply}/>
         </div>
         {buttonJSX}
-        { this.state.disableButtons && <div class="statusMessage"> Please wait... </div> }
         <div class="blockChainContainer">
           <BlockChainDisplay transactions={this.state.transactions}/>
         </div>

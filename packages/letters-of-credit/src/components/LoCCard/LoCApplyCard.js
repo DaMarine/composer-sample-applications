@@ -25,7 +25,7 @@ class LoCApplyCard extends Component {
       <div className="LoCCard noBorder">
         <h3>Letter of Credit Application</h3>
         <p>A letter of credit is issued by a bank to another bank (especially one in a different country) to serve as a guarantee for payments made to a specified person under specified conditions.</p>
-        <button className="viewButton applyButton" onClick={() => this.handleOnClick()}>Apply for a Letter of Credit</button>
+        <button className="viewButton applyButton" onClick={() => this.handleOnClick()} disabled={this.props.disableApply}>Apply for a Letter of Credit</button>
       </div>
     );
   }

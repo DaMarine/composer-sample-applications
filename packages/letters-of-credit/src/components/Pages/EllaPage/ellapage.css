@@ -27,10 +27,6 @@
   text-decoration: none;
 }
 
-.ellaUsername:hover {
-  cursor: pointer;
-}
-
 .ellaMenuItems {
   margin-top: 3vh;
   margin-left: 20%;

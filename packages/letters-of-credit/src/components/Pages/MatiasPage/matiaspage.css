@@ -27,10 +27,6 @@
   text-decoration: none;
 }
 
-.matiasUsername:hover {
-  cursor: pointer;
-}
-
 .matiasMenuItems {
   margin-top: 3vh;
   margin-left: 20%;

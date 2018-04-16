@@ -129,7 +129,7 @@ class MatiasPage extends Component {
       return (
         <div id="matiasPageContainer" className="matiasPageContainer">
           <div id="matiasHeaderDiv" className="flexDiv matiasHeaderDiv">
-            <span className="matiasUsername" onClick={() => {this.handleOnClick('alice')}}> {username} </span>
+            <span className="matiasUsername"> {username} </span>
             <div id="matiasMenu" className="matiasMenuItems">
               <span> Change account details </span>
               <span> View Transaction History </span>

@@ -21,6 +21,11 @@
   height: 10vh;
 }
 
+.aliceUsername:before {
+  content: "\25CF";
+  color: #fc6a66;
+}
+
 .aliceUsername {
   float: left;
   margin: 3vh;
@@ -28,10 +33,6 @@
   font-size: 90%;
   color: white;
   text-decoration: none;
-}
-
-.aliceUsername:hover {
-  cursor: pointer;
 }
 
 .aliceMenuItems {

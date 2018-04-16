@@ -109,8 +109,7 @@ class BobPage extends Component {
 			return (
     		<div id="bobPageContainer" className="bobPageContainer">
     		  <div id="bobHeaderDiv" className="flexDiv bobHeaderDiv">
-    		    <span className="bobUsername" onClick={() => {this.handleOnClick('ella')}}> {username} </span>
-						<span className="aliceUsername" onClick={() => {this.handleOnClick('alice')}}> Go to Alice </span>
+    		    <span className="bobUsername"> {username} </span>
     		  </div>
           <div class="bobWelcomeDiv">
             <p id="welcomeMessage">Welcome back {this.state.userDetails.name}</p>
@@ -123,7 +122,7 @@ class BobPage extends Component {
 
 					</div>
     		  <div className="locDiv">
-    		    <LoCApplyCard user="bob" callback={this.state.callback} />
+    		    <LoCApplyCard user="bob" callback={this.state.callback} disableApply />
 						{cardsJSX}
     		  </div>
 				</div>

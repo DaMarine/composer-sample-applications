@@ -21,6 +21,11 @@
   height: 10vh;
 }
 
+.bobUsername:before {
+  content: "\25CF";
+  color: #B64784;
+}
+
 .bobUsername {
   float: left;
   margin: 3vh;
@@ -28,10 +33,6 @@
   font-size: 90%;
   color: white;
   text-decoration: none;
-}
-
-.bobUsername:hover {
-  cursor: pointer;
 }
 
 .bobMenuItems {

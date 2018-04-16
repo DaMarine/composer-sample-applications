@@ -94,8 +94,7 @@ class AlicePage extends Component {
 			return (
     		<div id="alicePageContainer" className="alicePageContainer">
     		  <div id="aliceHeaderDiv" className="flexDiv aliceHeaderDiv">
-    		    <span className="aliceUsername" onClick={() => {this.handleOnClick('matias')}}> {username} </span>
-						<span className="aliceUsername" onClick={() => {this.handleOnClick('bob')}}> Go to Bob </span>
+    		    <span className="aliceUsername"> {username} </span>
     		    <div id="aliceMenu" className="aliceMenuItems">
     		      <span> Change account details </span>
     		      <span> View Transaction History </span>
