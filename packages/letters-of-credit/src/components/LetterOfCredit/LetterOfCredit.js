@@ -80,7 +80,7 @@ class LetterOfCredit extends Component {
         "$class": "org.acme.loc.ProductDetails",
         "productType": type,
         "quantity": quantity,
-        "pricePerUnit": price,
+        "pricePerUnit": price.toFixed(2),
         "id": "string"
       },
       "transactionId": "",

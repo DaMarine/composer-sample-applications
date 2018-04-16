@@ -107,10 +107,10 @@ class AlicePage extends Component {
     		      <h1> Welcome back {this.state.userDetails.name} </h1>
     		      <UserDetails name={this.state.userDetails.name} companyName={this.state.userDetails.companyName} sortCode={'12-34-57'} accountNumber={'54564351'}/>
 						</div>
-						<div id="alertsDiv" className="alertsDiv">
+						{/* <div id="alertsDiv" className="alertsDiv">
 							<Alert alertType={"Alert when:"} alertMessage={"my account balance falls below £15000"}/>
 							<Alert alertType={"Weekly Alert:"} alertMessage={"with most recent transactions"}/>
-						</div>
+						</div> */}
 					</div>
     		  <div className="locDiv">
     		    <LoCApplyCard user="alice" callback={this.state.callback} />
