@@ -43,6 +43,8 @@ class DetailsCard extends Component {
     let mainHeadingTxt = this.props.data[0];
     let jsx;
 
+    let containerClasses = this.props.disabled ? "cardContainer disabled" : "cardContainer";
+
     switch(this.props.type) {
       case 'Person':
         jsx = (
@@ -98,7 +100,7 @@ class DetailsCard extends Component {
     }
 
     return (
-      <div class="cardContainer">
+      <div class={containerClasses}>
         { this.props.canEdit && <a href="#" onClick={this.switchEditable.bind((this))}><img src={editIcon} alt="click to edit"/></a> }
         <h4>{mainHeadingTxt}</h4>
         {jsx}

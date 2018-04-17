@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Redirect } from 'react-router-dom';
+import Config from '../../utils/config';
 import './loccard.css';
 import axios from 'axios';
 
@@ -10,6 +11,7 @@ class LoCCard extends Component {
       redirect: false
 		}
     this.handleOnClick = this.handleOnClick.bind(this);
+    this.config = new Config();
 	}
 
   handleOnClick() {
@@ -19,7 +21,7 @@ class LoCCard extends Component {
 
   shipProduct(letterId) {
     let letter = "resource:org.acme.loc.LetterOfCredit#" + letterId;
-    axios.post('http://localhost:3000/api/ShipProduct', {
+    axios.post(this.config.httpURL+'/ShipProduct', {
       "$class": "org.acme.loc.ShipProduct",
       "loc": letter,
       "transactionId": "",
@@ -32,7 +34,7 @@ class LoCCard extends Component {
 
   receiveProduct(letterId) {
     let letter = "resource:org.acme.loc.LetterOfCredit#" + letterId;
-    axios.post('http://localhost:3000/api/ReceiveProduct', {
+    axios.post(this.config.httpURL+'/ReceiveProduct', {
       "$class": "org.acme.loc.ReceiveProduct",
       "loc": letter,
       "transactionId": "",

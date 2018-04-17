@@ -6,6 +6,7 @@ import UserDetails from '../../UserDetails/UserDetails.js';
 import Alert from '../../Alert/Alert.js';
 import LoCCard from '../../LoCCard/LoCCard.js';
 import LoCApplyCard from '../../LoCCard/LoCApplyCard.js';
+import Config from '../../../utils/config';
 
 class AlicePage extends Component {
   constructor(props) {
@@ -19,7 +20,8 @@ class AlicePage extends Component {
       redirect: false,
       redirectTo: ''
 		}
-    this.handleOnClick = this.handleOnClick.bind(this);
+		this.handleOnClick = this.handleOnClick.bind(this);
+		this.config = new Config();
 	}
 
   handleOnClick(user) {
@@ -29,13 +31,13 @@ class AlicePage extends Component {
 
 	componentDidMount() {
 		// open a websocket
-		this.connection = new WebSocket('ws://localhost:3000');
+		this.connection = new WebSocket(this.config.webSocketURL);
 		this.connection.onmessage = ((evt) => {
 			this.getLetters();
 		});
 
 		// make rest calls
-		let cURL = 'http://localhost:3000/api/Customer/alice';
+		let cURL = this.config.httpURL+'/Customer/alice';
 		axios.get(cURL)
 		.then(response => {
 			this.setState ({
@@ -54,7 +56,7 @@ class AlicePage extends Component {
 
 	getLetters() {
 		this.setState({gettingLetters: true});
-		axios.get('http://localhost:3000/api/LetterOfCredit')
+		axios.get(this.config.httpURL+'/LetterOfCredit')
     .then(response => {
 			// sort the LOCs by descending ID (will display the most recent first)
 			response.data.sort((a,b) => b.letterId.localeCompare(a.letterId));

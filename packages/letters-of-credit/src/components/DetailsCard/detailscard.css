@@ -7,6 +7,10 @@
   position: relative;
 }
 
+.disabled {
+  background-color: #f5f6fa;
+}
+
 .cardContainer a {
   visibility: hidden;
 }

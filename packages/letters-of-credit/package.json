@@ -1,6 +1,6 @@
 {
-  "name": "argentina-app",
-  "version": "0.0.7",
+  "name": "letters-of-credit",
+  "version": "0.0.1",
   "private": true,
   "author": "Erin Hughes, Hannah Rayner, Nikola Ignatov, Jackson Ross, Andrew Hurt",
   "dependencies": {
@@ -8,7 +8,9 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
+    "react-stepper-horizontal": "^1.0.10",
     "redux": "^3.7.2"
   },
   "scripts": {
